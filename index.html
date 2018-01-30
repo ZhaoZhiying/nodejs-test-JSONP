@@ -15,8 +15,12 @@
             let script = document.createElement('script')
             script.src = '/pay'
             document.body.appendChild(script)
+            script.onload = function(e){
+                e.currentTarget.remove() //删除 script
+            }
             script.onerror = function(){
                 alert('fail')
+                e.currentTarget.remove()
             }
         })
     </script>

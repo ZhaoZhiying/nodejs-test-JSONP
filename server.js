@@ -44,6 +44,7 @@ var server = http.createServer(function(request, response){
     fs.writeFileSync('./db', newAmount)
     response.setHeader('Content-Type', 'application/javascript')
     response.statusCode = 200
+    //无刷新，局部更新页面内容（这种技术叫做 SRJ(Server Rendered JavaScript))
     response.write(`
       amount.innerText = amount.innerText - 1
     `)
