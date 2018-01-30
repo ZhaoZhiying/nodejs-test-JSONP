@@ -8,22 +8,9 @@
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <h5>您的账户余额<span id="amount">&&&amount&&&</span></h5>
-    <button id="button">打钱</button>
-
-    <script>
-        button.addEventListener('click', (e)=>{
-            let script = document.createElement('script')
-            script.src = 'http://jack.com:8002/pay'
-            document.body.appendChild(script)
-            script.onload = function(e){
-                e.currentTarget.remove()
-            }
-            script.onerror = function(){
-                alert('fail')
-                e.currentTarget.remove()
-            }
-        })
-    </script>
+    <h5>您的账户余额<span id="amount">$amount$</span></h5>
+    <form action="/pay" method="post">
+        <input type="submit" value="付款">
+    </form>
 </body>
 </html>
